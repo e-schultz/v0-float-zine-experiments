@@ -1,4 +1,82 @@
-# FLOAT BBS Zine Explorer
+# FLOAT Advanced Concept Explorer
+
+The Advanced Concept Explorer is an enhanced visualization tool for exploring conceptual relationships using different expansion patterns. It provides an interactive interface for mapping knowledge ecosystems, exploring semantic connections, and discovering emergent patterns within your knowledge base.
+
+## Features
+
+### Five Expansion Patterns
+
+The Advanced Concept Explorer offers five different methods to explore your knowledge:
+
+1. **Concept-Led Expansion**: Start with a single concept and expand semantically
+   - Flow: seed::idea → floatlog search
+
+2. **Note-Led Expansion**: Parse metadata, tags, and themes from existing notes
+   - Flow: seed::note → semantic map
+
+3. **Chat-Led Echo Bloom**: Distill symbolic seed phrases from chat history
+   - Flow: seed::conversation → symbolic distillation
+
+4. **Sigil Seeding**: Use sigil filters to highlight latent themes
+   - Flow: seed::sigil → thematic resonance
+
+5. **Meta-Path Traversal**: Identify connections between floatlogs, sigils, and tags
+   - Flow: seed::path → network traversal
+
+### Interactive Visualization
+
+The Advanced Concept Explorer includes an interactive graph visualization that allows you to:
+
+- View concept relationships as a network graph
+- Drag nodes to rearrange the visualization
+- Explore connections between concepts
+- Identify clusters and patterns
+
+### Detailed Node Information
+
+For each exploration, you can view comprehensive details about each node, including:
+
+- Node metadata
+- Connection strength
+- Group membership
+- Related concepts
+
+## Usage
+
+1. Navigate to the Advanced Concept Explorer from the main navigation
+2. Select an expansion pattern that matches your exploration goals
+3. Enter a seed value appropriate for the selected pattern
+4. Click "Begin Exploration" to generate the concept graph
+5. Switch between tabs to view different aspects of the exploration:
+   - **Input**: Configure exploration parameters
+   - **Visualization**: View the interactive concept graph
+   - **Details**: Examine detailed information about nodes and connections
+
+## Integration with FLOAT System
+
+The Advanced Concept Explorer is fully integrated with the FLOAT system and follows its core principles:
+
+- **Shacks not Cathedrals**: The explorer provides lightweight, adaptable structures for knowledge exploration
+- **Emotional Resonance as Data**: Connections between concepts are weighted based on affective resonance
+- **Remembering Forward**: The explorer generates new connections rather than simply retrieving existing ones
+- **Ritual over Routine**: The exploration process is framed as an intentional ritual of knowledge discovery
+
+## Technical Implementation
+
+The Advanced Concept Explorer is built using:
+
+- React for the user interface
+- D3.js for the interactive graph visualization
+- Next.js for routing and server-side rendering
+- Tailwind CSS for styling
+
+The visualization uses a force-directed graph layout to position nodes based on their relationships, creating an organic representation of the concept space.
+\`\`\`
+
+Now, let's update the main README to include information about the Advanced Concept Explorer:
+
+```typescriptreact file="README.md"
+[v0-no-op-code-block-prefix]# FLOAT BBS Zine Explorer
 
 ![FLOAT BBS Banner](/placeholder.svg?height=200&width=800&query=cyberpunk%20retro%20BBS%20terminal%20with%20pink%20text%20on%20black%20background)
 
@@ -12,7 +90,6 @@ A mobile-friendly cyberpunk retro BBS-inspired zine explorer examining fragmente
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- [Navigation](#navigation)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -38,7 +115,6 @@ The project creates an immersive digital environment that evokes retro computing
 - **Concept Explorer**: Interactive tool for exploring and connecting concepts
 - **Advanced Concept Explorer**: Enhanced visualization tool with multiple expansion patterns and interactive graph visualization
 - **Ghostline Viewer**: Interface for viewing and interacting with FLOAT traces
-- **Projects Registry**: Showcase of applications and tools built with FLOAT
 - **DevTools Excavation**: Meta-interface for "observing the unobservable"
 - **Identity Fragments**: Exploration of fragmented gender concepts
 - **Terminal Interface**: Command-line for interacting with the FLOAT system
@@ -134,38 +210,6 @@ The Advanced Concept Explorer provides enhanced visualization capabilities:
 
 For more information, see the [Advanced Concept Explorer documentation](docs/advanced-concept-explorer.md).
 
-### Ghostline Viewer
-
-The Ghostline Viewer allows you to browse and search through traces of past interactions:
-
-1. Use the search bar to filter ghostlines by title or tag
-2. View detailed information about each ghostline trace
-3. Explore the connections between different traces
-
-### Projects Registry
-
-The Projects Registry showcases applications and tools built with the FLOAT framework:
-
-1. Browse through different projects
-2. View project details, status, and tags
-3. Access links to contribute to projects or learn more
-
-### DevTools
-
-The DevTools provide access to the underlying systems of the FLOAT framework:
-
-1. Use the Excavation panel to observe the unobservable
-2. Access the Console for direct interaction with the runtime
-3. Use the Sigil Debugger to monitor and debug active sigils
-
-### Identity Fragments
-
-The Identity Fragments section explores different aspects of fragmented gender identity:
-
-1. Browse through different identity concepts
-2. Explore the relationships between identity fragments
-3. Understand the hauntological approach to gender and identity
-
 ### Terminal Interface
 
 The Terminal Interface allows direct interaction with the FLOAT system:
@@ -178,51 +222,33 @@ The Terminal Interface allows direct interaction with the FLOAT system:
    - `--echo` - Echo back your input
    - `--invoke` - Invoke a specific FLOAT concept
 
+### Identity Fragments
+
+The Identity Fragments section explores different aspects of fragmented gender identity:
+
+1. Browse through different identity concepts
+2. Explore the relationships between identity fragments
+3. Understand the hauntological approach to gender and identity
+
 ## 📁 Project Structure
 
 \`\`\`
 float-bbs-zine/
 ├── app/                    # Next.js App Router
-│   ├── advanced-concept-explorer/ # Advanced Concept Explorer page
-│   ├── concepts/           # Concept Explorer page
-│   ├── devtools/           # DevTools page
-│   ├── ghostlines/         # Ghostline Viewer page
 │   ├── identity/           # Identity fragments page
-│   ├── projects/           # Projects page
 │   ├── globals.css         # Global styles
 │   ├── layout.tsx          # Root layout
 │   └── page.tsx            # Home page
 ├── components/             # React components
 │   ├── concept-explorer.tsx
-│   ├── concept-explorer-advanced.tsx
-│   ├── concept-graph.tsx
 │   ├── dev-tools-panel.tsx
 │   ├── float-header.tsx
 │   ├── ghost-trace.tsx
 │   ├── terminal-input.tsx
 │   └── ui/                 # shadcn/ui components
-├── docs/                   # Documentation
-│   ├── advanced-concept-explorer.md
-│   └── navigation-routes.md
 ├── public/                 # Static assets
 └── tailwind.config.ts      # Tailwind configuration
 \`\`\`
-
-## 🧭 Navigation
-
-The FLOAT BBS Zine Explorer provides a comprehensive navigation system to access all features:
-
-### Main Routes
-
-- **Home** (`/`): The main landing page with an overview of the FLOAT system
-- **Concept Explorer** (`/concepts`): Tool for exploring FLOAT concepts
-- **Advanced Concept Explorer** (`/advanced-concept-explorer`): Enhanced visualization tool
-- **Ghostline Viewer** (`/ghostlines`): Interface for viewing FLOAT traces
-- **Projects** (`/projects`): Registry of FLOAT-related projects
-- **DevTools** (`/devtools`): Developer tools for the FLOAT system
-- **Identity Fragments** (`/identity`): Exploration of gender identity concepts
-
-For more information, see the [Navigation Routes documentation](docs/navigation-routes.md).
 
 ## 🤝 Contributing
 

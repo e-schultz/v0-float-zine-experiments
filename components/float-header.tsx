@@ -33,6 +33,13 @@ export function FloatHeader() {
                   Concept Explorer
                 </Link>
                 <Link
+                  href="/advanced-concept-explorer"
+                  className="p-2 border-b border-pink-500/20 hover:text-pink-500 transition-colors bg-pink-500/10"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Advanced Explorer
+                </Link>
+                <Link
                   href="/ghostlines"
                   className="p-2 border-b border-pink-500/20 hover:text-pink-500 transition-colors"
                   onClick={() => setIsOpen(false)}

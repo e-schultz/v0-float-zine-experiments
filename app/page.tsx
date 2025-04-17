@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Terminal, Zap, BookOpen, Database, Code, Cpu } from "lucide-react"
+import { Terminal, Zap, BookOpen, Database, Code, Cpu, Network } from "lucide-react"
 import { FloatHeader } from "@/components/float-header"
 import { GhostTrace } from "@/components/ghost-trace"
 import { ConceptExplorer } from "@/components/concept-explorer"
@@ -73,6 +73,13 @@ export default function Home() {
           >
             <BookOpen className="mr-2 h-4 w-4 text-pink-400" />
             <span>Concept Explorer</span>
+          </Link>
+          <Link
+            href="/advanced-concept-explorer"
+            className="border border-pink-500 p-3 rounded-md hover:bg-pink-500/10 transition-colors flex items-center bg-pink-500/10"
+          >
+            <Network className="mr-2 h-4 w-4 text-pink-400" />
+            <span>Advanced Explorer</span>
           </Link>
           <Link
             href="/ghostlines"
