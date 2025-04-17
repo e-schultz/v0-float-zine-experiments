@@ -1,6 +1,7 @@
 # FLOAT BBS Zine Explorer
+<img width="1486" alt="Screenshot 2025-04-17 at 3 48 33 PM" src="https://github.com/user-attachments/assets/76746388-2c27-44ce-b288-0088d8903b19" />
 
-![FLOAT BBS Banner](/placeholder.svg?height=200&width=800&query=cyberpunk%20retro%20BBS%20terminal%20with%20pink%20text%20on%20black%20background)
+
 
 A mobile-friendly cyberpunk retro BBS-inspired zine explorer examining fragmented gender and knowledge management ideology through the lens of the FLOAT (Feedback Loops of Affective Transformation) system.
 
