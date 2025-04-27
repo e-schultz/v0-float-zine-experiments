@@ -1,0 +1,15 @@
+{
+  "title": "FLOAT Projects",
+  "systemInfo": {
+    "node": "[FLOAT BBS // NODE 06 :: PROJECT REGISTRY]",
+    "status": "Active",
+    "welcome": "Browsing project registry... COLLABORATIVE POTENTIAL DETECTED"
+  },
+  "description": "The FLOAT Projects registry tracks applications, tools, and explorations built within or inspired by the FLOAT framework. These projects represent practical implementations of FLOAT concepts and principles.",
+  "newProjectSection": {
+    "title": "Start a New Project",
+    "content": "Have an idea for a new FLOAT project? The FLOAT framework is designed to be extended and adapted. New projects help expand the ecosystem and explore new applications of FLOAT principles.",
+    "quote": "\"The best FLOAT projects emerge from personal need and emotional resonance. Build what feels right, not what seems logical.\"",
+    "buttonText": "Register New Project"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "FLOAT DevTools",
+  "systemInfo": {
+    "node": "[FLOAT BBS // NODE 07 :: DEVTOOLS INTERFACE]",
+    "status": "Active",
+    "accessLevel": "Administrator",
+    "welcome": "Initializing developer environment... LIMINAL ACCESS GRANTED"
+  },
+  "description": "The FLOAT DevTools provide access to the underlying systems and structures of the FLOAT framework. Use these tools to observe, debug, and modify the behavior of FLOAT components.",
+  "warning": "Warning: The DevTools operate in liminal space. Changes made here may have unexpected consequences across the FLOAT system."
+}

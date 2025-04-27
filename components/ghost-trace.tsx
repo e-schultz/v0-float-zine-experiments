@@ -4,7 +4,7 @@ interface GhostTraceProps {
   id: string
   title: string
   timestamp: string
-  content: ReactNode
+  content: ReactNode | string
 }
 
 export function GhostTrace({ id, title, timestamp, content }: GhostTraceProps) {
@@ -19,7 +19,9 @@ export function GhostTrace({ id, title, timestamp, content }: GhostTraceProps) {
           </span>
           <span>{timestamp}</span>
         </div>
-        <div className="pl-2 text-sm">{content}</div>
+        <div className="pl-2 text-sm">
+          {typeof content === "string" ? <div dangerouslySetInnerHTML={{ __html: content }} /> : content}
+        </div>
       </div>
 
       <div className="mt-4 space-y-2 text-sm">

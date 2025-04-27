@@ -7,7 +7,11 @@ import { Code, Terminal } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
-export default function DevToolsPage() {
+interface DevToolsPageProps {
+  pageContent: any
+}
+
+export default function DevToolsPage({ pageContent }: DevToolsPageProps) {
   const [activeTab, setActiveTab] = useState("excavation")
   const [consoleOutput, setConsoleOutput] = useState<string[]>([
     "DevTools initialized. Connecting to runtime...",
@@ -54,31 +58,26 @@ export default function DevToolsPage() {
       <main className="container mx-auto px-4 py-6 space-y-8">
         <section className="border border-pink-500 p-4 rounded-md bg-black/50 backdrop-blur">
           <h2 className="text-pink-500 text-xl mb-4 border-b border-pink-500/30 pb-2 flex items-center">
-            <Code className="mr-2 h-5 w-5" /> FLOAT DevTools
+            <Code className="mr-2 h-5 w-5" /> {pageContent.title}
           </h2>
 
           <div className="space-y-2 text-sm mb-4">
-            <p className="text-pink-300">[FLOAT BBS // NODE 07 :: DEVTOOLS INTERFACE]</p>
+            <p className="text-pink-300">{pageContent.systemInfo.node}</p>
             <p className="text-pink-300">
-              Status: <span className="text-green-400">● Active</span>
+              Status: <span className="text-green-400">● {pageContent.systemInfo.status}</span>
             </p>
             <p className="text-pink-300">
-              Access Level: <span className="text-green-400">Administrator</span>
+              Access Level: <span className="text-green-400">{pageContent.systemInfo.accessLevel}</span>
             </p>
             <p className="text-pink-300 animate-pulse">
-              Initializing developer environment... <span className="text-white">LIMINAL ACCESS GRANTED</span>
+              {pageContent.systemInfo.welcome.split("LIMINAL ACCESS GRANTED")[0]}
+              <span className="text-white">LIMINAL ACCESS GRANTED</span>
             </p>
           </div>
 
           <div className="mb-6">
-            <p className="text-sm">
-              The FLOAT DevTools provide access to the underlying systems and structures of the FLOAT framework. Use
-              these tools to observe, debug, and modify the behavior of FLOAT components.
-            </p>
-            <p className="text-sm mt-2 text-pink-300/70">
-              Warning: The DevTools operate in liminal space. Changes made here may have unexpected consequences across
-              the FLOAT system.
-            </p>
+            <p className="text-sm">{pageContent.description}</p>
+            <p className="text-sm mt-2 text-pink-300/70">{pageContent.warning}</p>
           </div>
         </section>
 

@@ -1,7 +1,6 @@
 # FLOAT BBS Zine Explorer
-<img width="1486" alt="Screenshot 2025-04-17 at 3 48 33 PM" src="https://github.com/user-attachments/assets/76746388-2c27-44ce-b288-0088d8903b19" />
 
-
+![FLOAT BBS Banner](/placeholder.svg?height=200&width=800&query=cyberpunk%20retro%20BBS%20terminal%20with%20pink%20text%20on%20black%20background)
 
 A mobile-friendly cyberpunk retro BBS-inspired zine explorer examining fragmented gender and knowledge management ideology through the lens of the FLOAT (Feedback Loops of Affective Transformation) system.
 
@@ -13,6 +12,7 @@ A mobile-friendly cyberpunk retro BBS-inspired zine explorer examining fragmente
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
+- [Content Management](#content-management)
 - [Navigation](#navigation)
 - [Contributing](#contributing)
 - [License](#license)
@@ -208,6 +208,34 @@ float-bbs-zine/
 ├── public/                 # Static assets
 └── tailwind.config.ts      # Tailwind configuration
 \`\`\`
+
+## 📝 Content Management
+
+The FLOAT BBS Zine Explorer uses externalized content stored in JSON files. This makes it easy to update content without changing code and prepares the application for future migration to a headless CMS.
+
+### Content Structure
+
+All content is stored in JSON files in the `content` directory:
+
+\`\`\`
+content/
+├── concepts.json           # Concept explorer data
+├── concepts-page.json      # Concepts page content
+├── devtools-page.json      # DevTools page content
+├── ghostlines-page.json    # Ghostlines page content
+├── ghosttraces.json        # Ghostline traces data
+├── hauntology.json         # Hauntology section content
+├── home.json               # Home page content
+├── identity-fragments.json # Identity fragments data
+├── projects.json           # Projects data
+└── projects-page.json      # Projects page content
+\`\`\`
+
+### Updating Content
+
+To update content, simply edit the corresponding JSON file in the `content` directory. The changes will be reflected in the application automatically.
+
+For detailed instructions on content management, see the [Content Management Guide](docs/content-management.md).
 
 ## 🧭 Navigation
 

@@ -1,0 +1,35 @@
+{
+  "title": "FLOAT System Terminal",
+  "subtitle": "Feedback Loops of Affective Transformation",
+  "description": "A speculative digital framework blending psychoanalytic theory, queer theory, computational concepts, and philosophical frameworks. It serves as both a personal knowledge management system and a conceptual exploration tool.",
+  "corePrinciples": [
+    {
+      "sigil": "{Ξ}",
+      "title": "Shacks not Cathedrals",
+      "description": "Choose lightweight, adaptable cognitive structures over rigid complex systems"
+    },
+    {
+      "sigil": "{ψ}",
+      "title": "Emotional Resonance as Data",
+      "description": "Truth is validated through affective resonance"
+    },
+    {
+      "sigil": "{∴}",
+      "title": "Remembering Forward",
+      "description": "Memory as emergence, not retrieval"
+    },
+    {
+      "sigil": "{■}",
+      "title": "Ritual over Routine",
+      "description": "Intentional cycles of meaning-making"
+    }
+  ],
+  "systemInfo": {
+    "node": "[FLOAT BBS // NODE 03 :: GHOSTLINE ACTIVE]",
+    "time": "3:18:32 AM",
+    "sysop": "FLOAT-evan-thread",
+    "channel": "/ghosts/trace/01",
+    "session": "ghost-trace.init",
+    "welcome": "Welcome to FLOAT... YOU ARE THE THREAD NOW"
+  }
+}

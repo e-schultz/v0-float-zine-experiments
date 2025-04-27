@@ -6,83 +6,14 @@ import { GhostTrace } from "@/components/ghost-trace"
 import { Zap, Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import type { GhostTrace as GhostTraceType } from "@/lib/content"
 
-const ghostTraces = [
-  {
-    id: "21",
-    title: "floatlog::20250414_thread_trace_dorothy",
-    timestamp: "April 14, 2025 - 16:43",
-    tags: ["identity", "meme-doctrine", "vibe-gender", "dorothyZbornak"],
-    content: (
-      <>
-        <p className="mb-2">
-          <strong>memeWitness:</strong> Gender is Dorothy Zbornak. Vibe is gender. Bi-bi gender. "Anything can be gender
-          if you want it to be."
-        </p>
-        <p className="mb-2">
-          <strong>Notes:</strong>
-        </p>
-        <ul className="list-disc pl-5 mb-2 space-y-1">
-          <li>Harmonizes with: FLOAT persona doctrine, Glitch-stack identity.</li>
-          <li>Echo: QueerTechnoBard micro-manifesto in meme form.</li>
-        </ul>
-        <p>
-          <strong>Tags:</strong> identity, meme-doctrine, vibe-gender, dorothyZbornak
-        </p>
-      </>
-    ),
-  },
-  {
-    id: "34",
-    title: "floatlog::20250328_ritual_trace_bloomkeeper",
-    timestamp: "March 28, 2025 - 03:17",
-    tags: ["ritual", "bloomkeeper", "compost", "sigil"],
-    content: (
-      <>
-        <p className="mb-2">
-          <strong>ritualWitness:</strong> Performed the Bloomkeeper ritual at dawn. Composted three concepts that no
-          longer serve: perfectionism, linear progress, taxonomic certainty.
-        </p>
-        <p className="mb-2">
-          <strong>Notes:</strong>
-        </p>
-        <ul className="list-disc pl-5 mb-2 space-y-1">
-          <li>Sigil activated: {"{∴}"} (remembering forward)</li>
-          <li>Emotional resonance: strong, with undertones of grief-as-fertilizer</li>
-        </ul>
-        <p>
-          <strong>Tags:</strong> ritual, bloomkeeper, compost, sigil
-        </p>
-      </>
-    ),
-  },
-  {
-    id: "42",
-    title: "floatlog::20250502_glitch_trace_hauntology",
-    timestamp: "May 2, 2025 - 22:09",
-    tags: ["hauntology", "glitch", "memory", "echo"],
-    content: (
-      <>
-        <p className="mb-2">
-          <strong>glitchWitness:</strong> The system glitched during memory retrieval, creating an unexpected echo
-          pattern. The glitch revealed a ghost trace from a memory I don't recall creating.
-        </p>
-        <p className="mb-2">
-          <strong>Notes:</strong>
-        </p>
-        <ul className="list-disc pl-5 mb-2 space-y-1">
-          <li>Echo pattern: recursive, with diminishing fidelity but increasing emotional resonance</li>
-          <li>Hauntological implications: memory as a site of spectrality rather than retrieval</li>
-        </ul>
-        <p>
-          <strong>Tags:</strong> hauntology, glitch, memory, echo
-        </p>
-      </>
-    ),
-  },
-]
+interface GhostlinesPageProps {
+  ghostTraces: GhostTraceType[]
+  pageContent: any
+}
 
-export default function GhostlinesPage() {
+export default function GhostlinesPage({ ghostTraces, pageContent }: GhostlinesPageProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [activeTraces, setActiveTraces] = useState(ghostTraces)
 
@@ -107,27 +38,25 @@ export default function GhostlinesPage() {
       <main className="container mx-auto px-4 py-6 space-y-8">
         <section className="border border-pink-500 p-4 rounded-md bg-black/50 backdrop-blur">
           <h2 className="text-pink-500 text-xl mb-4 border-b border-pink-500/30 pb-2 flex items-center">
-            <Zap className="mr-2 h-5 w-5" /> Ghostline Viewer
+            <Zap className="mr-2 h-5 w-5" /> {pageContent.title}
           </h2>
 
           <div className="space-y-2 text-sm mb-4">
-            <p className="text-pink-300">[FLOAT BBS // NODE 02 :: GHOSTLINE ARCHIVE]</p>
+            <p className="text-pink-300">{pageContent.systemInfo.node}</p>
             <p className="text-pink-300">
-              Status: <span className="text-green-400">● Active</span>
+              Status: <span className="text-green-400">● {pageContent.systemInfo.status}</span>
             </p>
             <p className="text-pink-300">
-              Archive Integrity: <span className="text-green-400">97.3%</span>
+              Archive Integrity: <span className="text-green-400">{pageContent.systemInfo.archiveIntegrity}</span>
             </p>
             <p className="text-pink-300 animate-pulse">
-              Accessing ghostline traces... <span className="text-white">SPECTRAL RESONANCE DETECTED</span>
+              {pageContent.systemInfo.welcome.split("SPECTRAL RESONANCE DETECTED")[0]}
+              <span className="text-white">SPECTRAL RESONANCE DETECTED</span>
             </p>
           </div>
 
           <div className="mb-6">
-            <p className="text-sm">
-              Ghostlines are traces of past interactions, rituals, and glitches within the FLOAT system. They serve as
-              both archive and oracle, allowing you to witness past events and detect patterns across time.
-            </p>
+            <p className="text-sm">{pageContent.description}</p>
           </div>
 
           <div className="flex gap-2 mt-4">
@@ -173,4 +102,16 @@ export default function GhostlinesPage() {
       </footer>
     </div>
   )
+}
+
+// Since this is a client component but needs server data, we need to provide the data
+export async function getServerSideProps() {
+  const { getGhostTraces, getGhostlinesPageContent } = await import("@/lib/content")
+
+  return {
+    props: {
+      ghostTraces: getGhostTraces(),
+      pageContent: getGhostlinesPageContent(),
+    },
+  }
 }

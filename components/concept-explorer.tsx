@@ -4,47 +4,13 @@ import { useState } from "react"
 import { Search, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import type { Concept } from "@/lib/content"
 
-const concepts = [
-  {
-    id: "bloomkeeper",
-    name: "identity::bloomkeeper",
-    tags: ["identity", "sigil"],
-    description:
-      'The Bloomkeeper is an identity that transforms "rot" and "curse" into doctrine and rebirth. It contrasts with the "Dung Eater" (nihilistic rot) as a "ritual metabolizer" that uses composting as a metaphor for transformative knowledge processes.',
-    related: ["reversed_sigil_dung_eater", "Compost Oracle", "ritualAST::bloom_from_rot"],
-  },
-  {
-    id: "remembering",
-    name: "remembering forward",
-    tags: ["concept", "memory"],
-    description:
-      'FLOAT reframes memory not as retrieval but as emergence - "remembering forward" where recursion functions as a form of prophecy. Semantic ghost surfacing.',
-    related: [
-      "not_retrieval: emergence",
-      "recursion_as_prophecy",
-      "ritual::float_seed::reverse_causality",
-      "semantic_ghost_surfacing: glitchStack::latent-signal-trace",
-    ],
-  },
-  {
-    id: "emotional",
-    name: "emotional resonance",
-    tags: ["epistemology", "affect"],
-    description: "Truth is validated through emotional resonance rather than purely rational means.",
-    related: ["Truth feels different", "Heresy as affective epistemology", "Emotional signal as truth vector"],
-  },
-  {
-    id: "dorothy",
-    name: "gender::dorothy_zbornak",
-    tags: ["identity", "gender", "meme-doctrine"],
-    description:
-      "Gender is Dorothy Zbornak. Vibe is gender. Bi-bi gender. Anything can be gender if you want it to be.",
-    related: ["glitchChorus.identity", "QueerTechnoBard", "vibe-gender"],
-  },
-]
+interface ConceptExplorerProps {
+  concepts: Concept[]
+}
 
-export function ConceptExplorer() {
+export function ConceptExplorer({ concepts }: ConceptExplorerProps) {
   const [selectedConcept, setSelectedConcept] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState("")
 

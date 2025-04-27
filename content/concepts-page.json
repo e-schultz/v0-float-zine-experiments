@@ -1,0 +1,16 @@
+{
+  "title": "FLOAT Concept Explorer",
+  "systemInfo": {
+    "node": "[FLOAT BBS // NODE 04 :: CONCEPT EXPLORER]",
+    "status": "Active",
+    "taxonomy": "rhizomatic",
+    "welcome": "Explore the conceptual framework of FLOAT through interconnected nodes."
+  },
+  "description": "The FLOAT Concept Explorer allows you to navigate through the conceptual landscape of the FLOAT system. Each concept is connected to others through a rhizomatic structure, allowing for non-hierarchical exploration and discovery.",
+  "taxonomyNotes": {
+    "title": "Concept Taxonomy Notes",
+    "content": "FLOAT concepts resist traditional taxonomic categorization. They are designed to be fluid, overlapping, and contextually adaptive. The connections between concepts are as important as the concepts themselves.",
+    "quote": "\"Taxonomic violence occurs when we force fluid concepts into rigid categories. FLOAT embraces the glitch as a site of resistance against such violence.\"",
+    "footer": "Use the concept explorer as a tool for navigation rather than classification. Allow yourself to follow unexpected connections and discover emergent patterns."
+  }
+}

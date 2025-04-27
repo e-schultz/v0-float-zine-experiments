@@ -1,51 +1,12 @@
 import { FloatHeader } from "@/components/float-header"
 import { Database, ExternalLink, GitBranch, Clock } from "lucide-react"
 import Link from "next/link"
-
-const projects = [
-  {
-    id: "float-zine",
-    title: "FLOAT Zine",
-    description: "A digital zine exploring the concepts and applications of the FLOAT system.",
-    status: "In Progress",
-    lastUpdated: "May 15, 2025",
-    tags: ["publishing", "documentation", "zine"],
-  },
-  {
-    id: "ritual-ast",
-    title: "Ritual AST",
-    description: "An abstract syntax tree for ritual design and execution within the FLOAT framework.",
-    status: "Active Development",
-    lastUpdated: "April 30, 2025",
-    tags: ["ritual", "code", "abstraction"],
-  },
-  {
-    id: "ghostline-parser",
-    title: "Ghostline Parser",
-    description: "A tool for parsing and analyzing ghostline traces to extract patterns and insights.",
-    status: "Planning",
-    lastUpdated: "May 5, 2025",
-    tags: ["tool", "analysis", "ghostlines"],
-  },
-  {
-    id: "sigil-generator",
-    title: "Sigil Generator",
-    description: "A generative tool for creating and activating FLOAT sigils based on conceptual inputs.",
-    status: "Prototype",
-    lastUpdated: "May 12, 2025",
-    tags: ["sigil", "generator", "tool"],
-  },
-  {
-    id: "float-cli",
-    title: "FLOAT CLI",
-    description: "A command-line interface for interacting with the FLOAT system from the terminal.",
-    status: "Early Development",
-    lastUpdated: "May 8, 2025",
-    tags: ["cli", "tool", "interface"],
-  },
-]
+import { getProjects, getProjectsPageContent } from "@/lib/content"
 
 export default function ProjectsPage() {
+  const projects = getProjects()
+  const pageContent = getProjectsPageContent()
+
   return (
     <div className="min-h-screen bg-black text-pink-100 font-mono">
       <FloatHeader />
@@ -53,27 +14,25 @@ export default function ProjectsPage() {
       <main className="container mx-auto px-4 py-6 space-y-8">
         <section className="border border-pink-500 p-4 rounded-md bg-black/50 backdrop-blur">
           <h2 className="text-pink-500 text-xl mb-4 border-b border-pink-500/30 pb-2 flex items-center">
-            <Database className="mr-2 h-5 w-5" /> FLOAT Projects
+            <Database className="mr-2 h-5 w-5" /> {pageContent.title}
           </h2>
 
           <div className="space-y-2 text-sm mb-4">
-            <p className="text-pink-300">[FLOAT BBS // NODE 06 :: PROJECT REGISTRY]</p>
+            <p className="text-pink-300">{pageContent.systemInfo.node}</p>
             <p className="text-pink-300">
-              Status: <span className="text-green-400">● Active</span>
+              Status: <span className="text-green-400">● {pageContent.systemInfo.status}</span>
             </p>
             <p className="text-pink-300">
               Projects: <span className="text-green-400">{projects.length} registered</span>
             </p>
             <p className="text-pink-300 animate-pulse">
-              Browsing project registry... <span className="text-white">COLLABORATIVE POTENTIAL DETECTED</span>
+              {pageContent.systemInfo.welcome.split("COLLABORATIVE POTENTIAL DETECTED")[0]}
+              <span className="text-white">COLLABORATIVE POTENTIAL DETECTED</span>
             </p>
           </div>
 
           <div className="mb-6">
-            <p className="text-sm">
-              The FLOAT Projects registry tracks applications, tools, and explorations built within or inspired by the
-              FLOAT framework. These projects represent practical implementations of FLOAT concepts and principles.
-            </p>
+            <p className="text-sm">{pageContent.description}</p>
           </div>
         </section>
 
@@ -128,19 +87,13 @@ export default function ProjectsPage() {
         </div>
 
         <section className="border border-pink-500 p-4 rounded-md bg-black/50 backdrop-blur">
-          <h3 className="text-pink-400 mb-4 border-b border-pink-500/30 pb-2">Start a New Project</h3>
+          <h3 className="text-pink-400 mb-4 border-b border-pink-500/30 pb-2">{pageContent.newProjectSection.title}</h3>
 
           <div className="space-y-4 text-sm">
-            <p>
-              Have an idea for a new FLOAT project? The FLOAT framework is designed to be extended and adapted. New
-              projects help expand the ecosystem and explore new applications of FLOAT principles.
-            </p>
+            <p>{pageContent.newProjectSection.content}</p>
 
             <div className="border-l-4 border-pink-500 pl-4 py-2 bg-pink-500/5">
-              <p className="text-pink-300 italic">
-                "The best FLOAT projects emerge from personal need and emotional resonance. Build what feels right, not
-                what seems logical."
-              </p>
+              <p className="text-pink-300 italic">{pageContent.newProjectSection.quote}</p>
             </div>
 
             <div className="mt-4">
@@ -148,7 +101,7 @@ export default function ProjectsPage() {
                 href="/projects/new"
                 className="bg-pink-500 hover:bg-pink-600 text-black px-4 py-2 rounded-md inline-block"
               >
-                Register New Project
+                {pageContent.newProjectSection.buttonText}
               </Link>
             </div>
           </div>
